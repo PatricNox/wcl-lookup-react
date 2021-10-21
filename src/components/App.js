@@ -1,5 +1,6 @@
-import logo from './assets/logo.png';
-import './App.css';
+import logo from '../assets/logo.png';
+import QueryForm from './QueryForm.js';
+import '../assets/css/App.css';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <h1>WCL Lookup Tool</h1>
         <description>A simple tool to lookup a characters latest info.</description>
       </header>
+      <QueryForm></QueryForm>
     </div>
   );
 }
