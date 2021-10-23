@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>WCL Lookup Tool</h1>
+        <h1 className="mt-2">WCL Lookup Tool</h1>
         <p>A simple tool to lookup a characters latest info.</p>
       </header>
       <QueryForm></QueryForm>

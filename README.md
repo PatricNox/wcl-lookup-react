@@ -4,15 +4,13 @@ This is the frontend holding repository for the WCL lookup tool.
 
 ## Getting started
 
-### Environment settings
+### 
+Environment settings
 
 Rename the `.env.example` file to `.env` and adjust the variables accordingly.
 
 > $ cp .env.example .env
 
-### WCL API
-
-Generate your client key at [Wacraftlogs Profile](https://www.warcraftlogs.com/profile) and update the `.env` file.
 ### `yarn start`
 
 Runs the app in the development mode.\
