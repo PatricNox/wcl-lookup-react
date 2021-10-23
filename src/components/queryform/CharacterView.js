@@ -15,7 +15,10 @@ class CharacterView extends React.Component {
     return (
       <div>
         <div>
-          <h1 className="uppercase text-yellow-500 text-2xl mb-2">{character}</h1>
+          <div>
+            <h1 className="uppercase text-yellow-500 text-4xl mb-2">{character}</h1>
+            <small className="uppercase text-yellow-500">ilvl { this.props.data.ilvlKeyOrPatch }</small>
+          </div>
           <button
             className='bg-yellow-800 hover:bg-blue-700 ml-4 uppercase text-white font-bold py-2 px-4 rounded'
             onClick={this.handleClose}
