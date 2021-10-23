@@ -49,7 +49,7 @@ class SearchForm extends React.Component {
               <form onSubmit={this.handleSubmit}>
                 <input type="text"
                 className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                  value={this.state.value}
+                  value={this.state.query}
                   onChange={this.handleQueryChange}
                 />
                 <input className="ml-2 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200" type="text"
