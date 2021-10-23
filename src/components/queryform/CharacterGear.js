@@ -41,7 +41,7 @@ class CharacterGear extends React.Component {
                     href={`https://www.wowhead.com/item=${item.id}`}
                     className={itemColorByQuality(item.quality)}
                     >
-                      {item.name}
+                      { item.name } ({ item.itemLevel })
                   </a>
                 </div>
               </div>
