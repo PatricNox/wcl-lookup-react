@@ -2,6 +2,10 @@
 
 This is the frontend holding repository for the WCL lookup tool.
 
+## Preview
+
+![Preview of tool](https://i.imgur.com/NVUEnUq.png)
+
 ## Information
 Specs:
 
