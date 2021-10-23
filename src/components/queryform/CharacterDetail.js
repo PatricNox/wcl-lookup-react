@@ -14,10 +14,14 @@ class CharacterDetail extends React.Component {
             {talents.map(talent => (
               <div className="text-blue-300">
                 <div class="ml-1">
-                  <img
-                    src={ assetUrl + talent.icon }
-                    alt={ talent.name }
-                    width="40" />
+                  <a
+                    href={`https://www.wowhead.com/spell=${talent.id}`}
+                  >
+                    <img
+                      src={ assetUrl + talent.icon }
+                      alt={ talent.name }
+                      width="40" />
+                  </a>
                 </div>
               </div>
             ))}
@@ -36,10 +40,14 @@ class CharacterDetail extends React.Component {
         <div class="flex flex-col justify-center">
           <span class="uppercase text-xs  text-yellow-200">legendary</span>
           <div className="uppercase text-yellow-500">{ legendary.name }</div>
-          <img
+          <a
+              href={`https://www.wowhead.com/spell=${legendary.id}`}
+          >
+            <img
             src={ assetUrl + legendary.icon }
             alt={ legendary.name }
             width="40" />
+          </a>
         </div>
       </div>
     )
