@@ -2,6 +2,12 @@
 
 This is the frontend holding repository for the WCL lookup tool.
 
+## Information
+Specs:
+
+- React 17.0.2
+- TailwindCSS postcss7-compat
+
 ## Getting started
 
 ### 
