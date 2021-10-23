@@ -1,39 +1,24 @@
 import React from 'react';
-
-const QueryFormView = props => {
-  if (!props.searched) {
-    return (
-        <div>
-           <form>
-               <input type="text"/>
-               <input type="submit"/>
-            </form> 
-        </div>
-    );
-  }
-  return null;
-};
-
-const QueriedResultView = props => {
-  if (props.searched) {
-    return (
-        <div>
-            <h1>Queried</h1>
-        </div>
-    );
-  }
-
-  return null;
-};
-
+import SearchForm from './queryform/SearchForm';
 class QueryForm extends React.Component {
+    constructor() {
+        super();
+        this.state = {showCharacter: false, inProgress: true, characterData: {}};
+        this.handleQuery  = this.handleQuery.bind(this);
+
+    }
+  handleQuery(event) {
+    console.log(event);
+    // this.setState({query: event.target.value});
+  }
   render() {
-    return (
-        <div>
-            <QueryFormView hasQueired={this.props.searched} />
-            <QueriedResultView hasQueired={this.props.searched} />
-        </div>
-    );
+    const showCharacter = this.state.showCharacter;
+    return !showCharacter ? (
+      <SearchForm onQuery={this.handleQuery}></SearchForm>
+    ):(
+      <div>
+        {this.state.characterData.characterName}
+      </div>);
   }
 }
 
