@@ -37,7 +37,12 @@ class CharacterGear extends React.Component {
                     width="40" />
                 </div>
                 <div className="mt-2 ml-4">
-                  <p className={itemColorByQuality(item.quality)}>{item.name}</p>
+                  <a
+                    href={`https://www.wowhead.com/item=${item.id}`}
+                    className={itemColorByQuality(item.quality)}
+                    >
+                      {item.name}
+                  </a>
                 </div>
               </div>
             ))}
