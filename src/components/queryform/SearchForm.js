@@ -4,7 +4,7 @@ import WCLApi from '../../api/WCLApi';
 class SearchForm extends React.Component {
     constructor() {
         super();
-        this.state = { query: '', realm: '', region: 'eu', loading: false, inProgress: true };
+        this.state = { query: '', realm: '', region: 'eu', loading: false, inProgress: true, message: '' };
         this.handleQueryChange  = this.handleQueryChange.bind(this);
         this.handleRealmChange  = this.handleRealmChange.bind(this);
         this.handleRegionChange  = this.handleRegionChange.bind(this);
@@ -31,9 +31,10 @@ class SearchForm extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ loading: true });
+    this.setState({ loading: true, message: 'loading..' });
     WCLApi.parses.lookup(this.state.query, this.state.realm, this.state.region).then((data) => {
-      this.props.onQuery(data)
+      if (data.characterName) this.props.onQuery(data)
+      else this.setState({message: 'Character not found'})
       this.setState({ query: '', realm: '', region: 'eu' });
     }).finally(() => {
       this.setState({ loading: false });
@@ -60,7 +61,7 @@ class SearchForm extends React.Component {
                   <option value="us">US</option>
                 </select>
                 <button
-                  className={`${this.state.inProgress ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-700'} ml-4 text-white font-bold py-2 px-4 rounded`}
+                  className={`${this.state.inProgress ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-700'} ml-4 uppercase text-white font-bold py-2 px-4 rounded`}
                   type="submit"
                   disabled={this.state.inProgress}>
                   Lookup
@@ -68,10 +69,13 @@ class SearchForm extends React.Component {
               </form>
             </div>
           </span>
+          <div>
+            <h2 className="mt-4 text-red-500 uppercase">{this.state.message}</h2>
+          </div>
       </div>
     ) : (
       <div>
-        <h2 className="text-yellow-500">Loading..</h2>
+        <h2 className="text-yellow-500 uppercase">Loading..</h2>
       </div>
     )
   }
