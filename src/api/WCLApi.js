@@ -11,8 +11,8 @@ const requests = {
 };
 
 const parses = {
-  lookup: (request) =>
-    requests.post('/wcl/parses/lookup', { character: request, realm: 'ravencrest', region: 'eu' }),
+  lookup: (character, realm, region) =>
+    requests.post('/wcl/parses/lookup', { character: character, realm: realm, region: region }),
 };
 
 const endpoints = {
