@@ -15,6 +15,7 @@ const parses = {
     requests.post('/wcl/parses/lookup', { character: request, realm: 'ravencrest', region: 'eu' }),
 };
 
-export default {
+const endpoints = {
   parses,
 };
+export default endpoints;
