@@ -97,9 +97,8 @@ class SearchForm extends React.Component {
           </div>
       </div>
     ) : (
-      <div>
-        <h2 className="text-yellow-500 uppercase">Loading..</h2>
-      </div>
+      // Loading indicator
+      <div class="mx-auto loader ease-linear rounded-full border-8 border-t-8 border-gray-500 h-16 w-16"></div>
     )
   }
 }
