@@ -2,7 +2,12 @@
 
 This is the frontend holding repository for the WCL lookup tool.
 
+**Backend**: [WCL-Lookup-Backend (Laravel)](https://github.com/PatricNox/wcl-lookup-backend) 
+
+
 ## Preview
+
+**Live demo**: [https://wcl-tool.patricnox.info/](https://wcl-tool.patricnox.info/)
 
 ![Preview of tool](https://i.imgur.com/NVUEnUq.png)
 
