@@ -29,8 +29,11 @@ class CharacterGear extends React.Component {
       <div className="flex mt-4 p-2 w-2/3 m-auto border border-yellow-100 text-left">
           <div className="flex flex-col">
             {items.map(item => (
-              <div className="flex">
-                <div class="ml-1">
+              <div
+                className="flex"
+                key={item.id}
+              >
+                <div className="ml-1">
                   <img
                     src={ assetUrl + item.icon }
                     alt={ item.name }

@@ -9,11 +9,14 @@ class CharacterDetail extends React.Component {
       <div className="flex justify-between mt-4 p-2 w-2/3 m-auto border border-yellow-800 text-left">
         {/* Talents */}
         <div className="flex flex-col">
-          <span class="uppercase text-xs  text-yellow-200">talents</span>
+          <span className="uppercase text-xs  text-yellow-200">talents</span>
           <div className="flex">
             {talents.map(talent => (
-              <div className="text-blue-300">
-                <div class="ml-1">
+              <div
+                className="text-blue-300"
+                key={talent.id}
+              >
+                <div className="ml-1">
                   <a
                     href={`https://www.wowhead.com/spell=${talent.id}`}
                   >
@@ -30,15 +33,15 @@ class CharacterDetail extends React.Component {
 
         {/* rank */}
         <div className="flex flex-col">
-          <span class="uppercase text-xs  text-yellow-200">rank</span>
+          <span className="uppercase text-xs  text-yellow-200">rank</span>
           <div className="flex">
             <div className="text-3xl text-green-500">{ this.props.character.rank } / { this.props.character.outOf }</div>
           </div>
         </div>
 
         {/* Legendary */}
-        <div class="flex flex-col justify-center">
-          <span class="uppercase text-xs  text-yellow-200">legendary</span>
+        <div className="flex flex-col justify-center">
+          <span className="uppercase text-xs  text-yellow-200">legendary</span>
           <div className="uppercase text-yellow-500">{ legendary.name }</div>
           <a
               href={`https://www.wowhead.com/spell=${legendary.id}`}
