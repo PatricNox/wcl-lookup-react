@@ -39,7 +39,7 @@ class SearchForm extends React.Component {
       // If we got a character name, store the data in a scoped variable.
       if (data.characterName) charData = data;
       else this.setState({message: 'Character not found'})
-      this.setState({ query: '', realm: '', region: 'eu' });
+      this.setState({ query: '', realm: '', });
     }).finally(() => {
       this.setState({ loading: false });
 
