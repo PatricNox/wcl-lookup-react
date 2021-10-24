@@ -40,7 +40,19 @@ class SearchForm extends React.Component {
       if (data.characterName) charData = data;
       else this.setState({message: 'Character not found'})
       this.setState({ query: '', realm: '', });
-    }).finally(() => {
+    })
+    .catch((error) => {
+      switch (error.status) {
+        case 400:
+        case 404:
+          this.setState({message: 'Character/Realm not found'});
+          break;
+        default:
+          this.setState({message: 'Something went wrong, please try again later'});
+          break;
+      }
+    })
+    .finally(() => {
       this.setState({ loading: false });
 
       // Finally, bubble to parentComponent.
